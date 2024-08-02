@@ -52,7 +52,7 @@ float stars[NUM_STARS][3];
 float ufoX = SCREEN_WIDTH / 2;
 float ufoY = SCREEN_HEIGHT / 2;
 float ufoZ = 0;
-long timeOffset = 7200;  // offset for GMT+2 from https://www.epochconverter.com/timezones
+long timeOffset = -14400;  // offset for GMT-4 from https://www.epochconverter.com/timezones
 
 String status = "Idle";
 
@@ -86,7 +86,7 @@ int ips[255] = {};
 
 unsigned long lastPingTime = 0;
 bool honeypotTriggered = false;
-bool sounds = true;
+bool sounds = false;
 int buzzer_pin = 13;
 
 String externalNetworkStatus = "";
@@ -129,11 +129,11 @@ const char* ssid = "";
 const char* password = "";
 
 bool enableNetworkMode = true;
-bool shouldSaveConfig = false;
+bool shouldSaveConfig = true;
 bool useButtonToResetFlash = true;
 bool hasControlsButtons = false;
-bool debug = true;
-bool headless = true;
+bool debug = false;
+bool headless = false;
 bool hasDisplay = true;
 bool carouselMode = true;
 bool scheduledRestart = false;
@@ -219,6 +219,7 @@ void SerialPrintLn(int message) {
 void setup() {
   Serial.begin(115200);
 
+  // Wire.begin(D3, D4); // use D3/D4 for SDA/SCL (purple only)
   displayInit();
   netgotchiIntro();
 

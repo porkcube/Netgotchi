@@ -1,3 +1,11 @@
+# Fork changes
+- rename netgotchi.ino -> Netgotchi.ino to match parent dir name
+- cfg SDA/SCL display alternate pins
+- ~~adjust NTP time offset to display EDT instead of UTC~~
+- ~~add NTPClient library requirement~~
+
+#########
+
 # 🛡️ Netgotchi
 
 ![Netgotchi Image](https://github.com/MXZZ/Netgotchi/assets/3322271/947416e6-c088-4167-ba62-e69a6d1170ce)
