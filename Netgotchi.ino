@@ -123,7 +123,7 @@ const int flashButtonPin = 0;  // GPIO0 is connected to the flash button
 WiFiManager wifiManager;
 
 bool useWifiManager = true;
-int wifiManagertimeout = 360; // seconds to run for
+int wifiManagertimeout = 360;  // seconds to run for
 
 const char* ssid = "";
 const char* password = "";
@@ -172,40 +172,37 @@ bool evilTwinDetected = false;
 
 //wrapper functions for display
 void displayPrintln(String line = "") {
-  if(hasDisplay)display.println(line);
+  if (hasDisplay) display.println(line);
 }
 void displaySetCursor(int x, int y) {
-  if(hasDisplay)display.setCursor(x, y);
+  if (hasDisplay) display.setCursor(x, y);
 }
 void displayPrint(String line) {
-  if(hasDisplay)display.print(line);
+  if (hasDisplay) display.print(line);
 }
 void displayClearDisplay() {
-  if(hasDisplay)display.clearDisplay();
+  if (hasDisplay) display.clearDisplay();
 }
 void displaySetSize(int size) {
-  if(hasDisplay)display.setTextSize(size);
+  if (hasDisplay) display.setTextSize(size);
 }
 void displaySetTextColor(int color) {
-  if(hasDisplay)display.setTextColor(color);
+  if (hasDisplay) display.setTextColor(color);
 }
 void displayPrintDate(const char* format, int day, int month, int year) {
-  if(hasDisplay)display.printf(format, day, month, year);
+  if (hasDisplay) display.printf(format, day, month, year);
 }
 void displayDisplay() {
-  if(hasDisplay)display.display();
+  if (hasDisplay) display.display();
 }
-void displayDrawLine(uint16_t  x0, uint16_t  y0, uint16_t  x1, uint16_t  y1, uint16_t color)
-{
-  if(hasDisplay)display.drawLine( x0,y0,x1,y1, color);
+void displayDrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color) {
+  if (hasDisplay) display.drawLine(x0, y0, x1, y1, color);
 }
-void displayDrawCircle(uint16_t x, uint16_t y, uint16_t  radius , uint16_t color)
-{
-  if(hasDisplay)display.drawCircle(x, y, radius, color);
+void displayDrawCircle(uint16_t x, uint16_t y, uint16_t radius, uint16_t color) {
+  if (hasDisplay) display.drawCircle(x, y, radius, color);
 }
-void displayDrawPixel(uint16_t  x, uint16_t  y, uint16_t color)
-{
-  if(hasDisplay)display.drawPixel(x, y, color);
+void displayDrawPixel(uint16_t x, uint16_t y, uint16_t color) {
+  if (hasDisplay) display.drawPixel(x, y, color);
 }
 
 void SerialPrintLn(String message) {
@@ -223,13 +220,12 @@ void setup() {
   displayInit();
   netgotchiIntro();
 
-  if(enableNetworkMode) 
-  {
+  if (enableNetworkMode) {
     networkInit();
     saveCurrentNetworkInfos();
   }
-  if(useButtonToResetFlash)pinMode(flashButtonPin, INPUT_PULLUP);
-  if(hasControlsButtons)buttonsInit();
+  if (useButtonToResetFlash) pinMode(flashButtonPin, INPUT_PULLUP);
+  if (hasControlsButtons) buttonsInit();
 
   initStars();
 }
@@ -239,10 +235,10 @@ void loop() {
   seconds = currentMillis / 1000;
 
   //main netgotchi network functionalities
-  if(enableNetworkMode)networkFunctionsLoop();
+  if (enableNetworkMode) networkFunctionsLoop();
 
   //display carousel
-  if (carouselMode && ( currentMillis - previousMillis >= interval)) {
+  if (carouselMode && (currentMillis - previousMillis >= interval)) {
     previousMillis = currentMillis;
     if (currentScreen == 0) {};
     if (currentScreen == 1) displayIPS();
@@ -276,9 +272,3 @@ void headlessInfo() {
     SerialPrintLn(netgotchiCurrentFace + " Honeypot:" + (honeypotTriggered ? "breached" : "OK") + " EvilTwin:" + (evilTwinDetected ? "detected" : "OK") + " Host-Found:" + String(ipnum) + " Vulnerabilities:" + String(vulnerabilitiesFound));
   }
 }
-
-
-
-
-
-
