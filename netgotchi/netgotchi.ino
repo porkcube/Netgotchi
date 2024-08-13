@@ -129,16 +129,16 @@ const char* ssid = "";
 const char* password = "";
 
 bool enableNetworkMode = true;
-bool shouldSaveConfig = false;
+bool shouldSaveConfig = true;
 bool useButtonToResetFlash = true;
 bool hasControlsButtons = false;
-bool debug = true;
+bool debug = false;
 bool headless = true;
 bool hasDisplay = true;
 bool carouselMode = true;
-bool scheduledRestart = false;
+bool scheduledRestart = true;
 
-bool securityScanActive = true;
+bool securityScanActive = false;
 bool skipFTPScan = true;
 int vulnerabilitiesFound = 0;
 
