@@ -52,7 +52,7 @@ float stars[NUM_STARS][3];
 float ufoX = SCREEN_WIDTH / 2;
 float ufoY = SCREEN_HEIGHT / 2;
 float ufoZ = 0;
-long timeOffset = 7200;  // offset for GMT+2 from https://www.epochconverter.com/timezones
+long timeOffset = -14400;  // offset for GMT+2 from https://www.epochconverter.com/timezones
 
 String status = "Idle";
 
@@ -216,6 +216,7 @@ void SerialPrintLn(T message) {
 void setup() {
   Serial.begin(115200);
 
+  // Wire.begin(D3, D4); // use D3/D4 for SDA/SCL (purple only)
   displayInit();
   netgotchiIntro();
 
