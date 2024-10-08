@@ -24,7 +24,7 @@
 #include <WiFiManager.h>  // Include the WiFiManager library
 #include <Button2.h>
 
-const float VERSION = 1.5;
+const float VERSION = 1.51;
 
 //Oled Screen Selectors
 #define SCREEN_WIDTH 128
