@@ -10,7 +10,7 @@ void displayInit()
     //display initializer
     if(oled_type_ssd1306){
       // spefify your pins if needed 
-      Wire.begin(D2, D1); // use D2/D1 for SDA/SCL (grey only)
+      // Wire.begin(D2, D1); // use D2/D1 for SDA/SCL (grey only)
       if (!display.begin(2, 0x3C)) { 
         // add "SSD1306_SWITCHCAPVCC, 0x3C" in the begin() if screen doesn't work. 
         SerialPrintLn("SSD1306 allocation failed");
@@ -270,7 +270,8 @@ void netgotchiIntro()
   displaySetTextColor(1);  //white color
   displaySetCursor(0, 0);
   displayPrintln("Netgotchi v." + String(VERSION));
-  displayPrintln("created by MXZZ ");
+  displayPrintln("created by MXZZ");
+  displayPrintln("WPFR  Edition");
   delay(500);
 }
 
