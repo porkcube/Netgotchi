@@ -69,7 +69,7 @@ float stars[NUM_STARS][3];
 float ufoX = SCREEN_WIDTH / 2;
 float ufoY = SCREEN_HEIGHT / 2;
 float ufoZ = 0;
-long timeOffset = -14400;  // offset for GMT+2 from https://www.epochconverter.com/timezones
+long timeOffset = -18000;  // offset for GMT+2 from https://www.epochconverter.com/timezones
 
 String status = "Idle";
 
